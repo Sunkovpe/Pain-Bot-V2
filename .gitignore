@@ -1,0 +1,5 @@
+node_modules/
+Sessions/
+tmp/
+package-lock.json
+database.json
