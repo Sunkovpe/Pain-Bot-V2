@@ -346,7 +346,7 @@ Object.freeze(global.reload)
 watch(pluginFolder, global.reload)
 await global.reloadHandler()
 
-// Consola interactiva para enviar mensajes a grupos desde la terminal
+// Consola interactiva para enviar mensajes a grupos desde la terminal - bot
 // Comandos:
 //  :groups                -> Lista los grupos con índice
 //  :to <idx|jid>         -> Selecciona el destino por índice o JID de grupo

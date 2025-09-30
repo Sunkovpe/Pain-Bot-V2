@@ -12,7 +12,7 @@ var handler = async (m, { conn, isOwner, args }) => {
       } catch { return '' }
     }
 
-    // Si es owner: listar todos los grupos donde está el bot. Si no: solo el grupo actual
+
     const grupos = []
     if (isOwner) {
       for (const [jid, chat] of Object.entries(conn.chats || {})) {
@@ -44,7 +44,7 @@ var handler = async (m, { conn, isOwner, args }) => {
         const fechaCreacion = cread ? cread.toLocaleString('es-ES', { dateStyle: 'medium', timeStyle: 'short' }) : 'Desconocida'
         const descripcion = (md?.desc?.toString()?.slice(0, 200) || '').trim()
 
-        // Listado de miembros con rol
+       
         const miembrosListado = []
         for (let i = 0; i < participantes.length; i++) {
           const p = participantes[i]
@@ -55,7 +55,7 @@ var handler = async (m, { conn, isOwner, args }) => {
           miembrosListado.push(`${i + 1}. ${etiqueta} ${rol !== 'miembro' ? `(${rol})` : ''}`.trim())
         }
 
-        // Enlace de invitación (si el bot es admin)
+    
         let enlace = null
         if (botIsAdmin) {
           try {
@@ -87,17 +87,17 @@ var handler = async (m, { conn, isOwner, args }) => {
 
     const cuerpo = `${encabezado}\n\n${partes.map((t, i) => `#${i + 1}\n${t}`).join('\n\n')}`.trim()
 
-    // Si es muy largo, enviar en partes
+   
     if (cuerpo.length <= 6000) {
       await conn.sendMessage(m.chat, { text: cuerpo, mentions: await conn.parseMention(cuerpo) }, { quoted: m })
     } else {
-      // dividir en bloques de ~4000 caracteres
+      
       let i = 0
       const trozos = []
       for (let off = 0; off < cuerpo.length; off += 4000) trozos.push(cuerpo.slice(off, off + 4000))
       for (const block of trozos) {
         await conn.sendMessage(m.chat, { text: block, mentions: await conn.parseMention(block) }, { quoted: m })
-        if (++i >= 5) break // no spamear demasiado
+        if (++i >= 5) break 
       }
     }
   } catch (e) {
