@@ -35,12 +35,12 @@ var mediax = await quoted.download?.()
 conn.sendMessage(m.chat, { video: mediax, mimetype: 'video/mp4', caption: htextos, mentions: users }, { quoted: null })
 } else if ((isMedia && quoted.mtype === 'audioMessage') && htextos) {
 var mediax = await quoted.download?.()
-conn.sendMessage(m.chat, { audio: mediax, mimetype: 'audio/mp4', fileName: Hidetag.mp3, mentions: users }, { quoted: null })
+conn.sendMessage(m.chat, { audio: mediax, mimetype: 'audio/mp4', fileName: 'Hidetag.mp3', mentions: users }, { quoted: null })
 } else if ((isMedia && quoted.mtype === 'stickerMessage') && htextos) {
 var mediax = await quoted.download?.()
 conn.sendMessage(m.chat, { sticker: mediax, mentions: users }, { quoted: null })
 } else {
-await conn.relayMessage(m.chat, { extendedTextMessage: { text: `${masss}\n${htextos}\n`, contextInfo: { mentionedJid: users } }})
+await conn.sendMessage(m.chat, { text: `${masss}\n${htextos}\n`, mentions: users }, { quoted: null })
 }}}
 
 handler.help = ['hidetag']

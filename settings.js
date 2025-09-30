@@ -35,7 +35,8 @@ global.dev = "𝑩𝒚 𝑺𝒖𝒏𝒌𝒐𝒗𝒗"
 global.author = "𝑺𝒖𝒏𝒌𝒐𝒗𝒗"
 global.etiqueta = "𝖲𝗎𝗇𝗄𝗈𝗏𝗏"
 global.currency = "PB"
-global.banner = "https://files.catbox.moe/ww9mfh.jpg"
+
+global.banner = fs.readFileSync('./lib/catalogo.jpg')
 global.icono = "https://files.catbox.moe/zsl6si.jpg"
 global.catalogo = fs.readFileSync('./lib/catalogo.jpg')
 

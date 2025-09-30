@@ -87,6 +87,7 @@ if (!("antiLink" in chat)) chat.antiLink = true
 if (!("nsfw" in chat)) chat.nsfw = false
 if (!("economy" in chat)) chat.economy = true
 if (!("gacha" in chat)) chat.gacha = true
+if (!("simi" in chat)) chat.simi = false
 } else global.db.data.chats[m.chat] = {
 isBanned: false,
 welcome: true,
@@ -98,7 +99,8 @@ modoadmin: false,
 antiLink: true,
 nsfw: false,
 economy: true,
-gacha: true
+gacha: true,
+simi: false
 }
 var settings = global.db.data.settings[this.user.jid]
 if (typeof settings !== "object") 

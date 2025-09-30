@@ -25,13 +25,9 @@ const status = `> ✪ El grupo ha sido ${m.messageStubParameters[0] == 'on' ? '*
 const admingp = `> ✪ @${users.split('@')[0]} Ahora es admin del grupo.\n> 𖤓 Acción hecha por:\n> » @${usuario.split('@')[0]}`
 const noadmingp = `> ✪ @${users.split('@')[0]} Deja de ser admin del grupo.\n> 𖤓 Acción hecha por:\n> » @${usuario.split('@')[0]}`
 if (chat.detect && m.messageStubType == 2) {
-const uniqid = (m.isGroup ? m.chat : m.sender).split('@')[0]
-const sessionPath = `./${sessions}/`
-for (const file of await fs.promises.readdir(sessionPath)) {
-if (file.includes(uniqid)) {
-await fs.promises.unlink(path.join(sessionPath, file))
-console.log(`${chalk.yellow.bold('✎ Delete!')} ${chalk.greenBright(`'${file}'`)}\n${chalk.redBright('Que provoca el "undefined" en el chat.')}`)
-}}} if (chat.detect && m.messageStubType == 21) {
+
+}
+if (chat.detect && m.messageStubType == 21) {
 rcanal.contextInfo.mentionedJid = [usuario, ...groupAdmins.map(v => v.id)]
 await this.sendMessage(m.chat, { text: nombre, ...rcanal }, { quoted: null })
 } if (chat.detect && m.messageStubType == 22) {
