@@ -20,8 +20,8 @@ global.prems = []
 
 //*─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─⭒─ׄ─ׅ─ׄ─*
 
-global.libreria = "Baileys Multi Device"
-global.vs = "^1.0.0"
+global.libreria = "Baileys MD"
+global.vs = "^1.4.1"
 global.nameqr = "Pain Bot"
 global.sessions = "Sessions/Principal"
 global.jadi = "Sessions/SubBot"
@@ -31,7 +31,7 @@ global.yukiJadibts = true
 
 global.botname = "𝙋𝙖𝙞𝙣 𝘽𝙤𝙩"
 global.textbot = "𝘗𝘢𝘪𝘯 𝘉𝘰𝘵 - 𝘽𝙮 𝙎𝙪𝙣𝙠𝙤𝙫𝙫"
-global.dev = "𝑩𝒚 𝑺𝒖𝒏𝒌𝒐𝒗𝒗"
+global.dev = "𝐁𝐲 𝐒𝐮𝐧𝐤𝐨𝐯𝐯 🐍"
 global.author = "𝑺𝒖𝒏𝒌𝒐𝒗𝒗"
 global.etiqueta = "𝖲𝗎𝗇𝗄𝗈𝗏𝗏"
 global.currency = "PB"

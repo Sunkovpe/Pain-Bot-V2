@@ -163,7 +163,7 @@ let addNumber
 if (!!phoneNumber) {
 addNumber = phoneNumber.replace(/[^0-9]/g, '')
 } else {
-phoneNumber = await question(chalk.bgBlack(chalk.bold.greenBright(`[ ✿ ]  Por favor, Ingrese el número de WhatsApp.\n${chalk.bold.magentaBright('---> ')}`)))
+phoneNumber = await question(chalk.bgBlack(chalk.bold.greenBright(`[ ✪ ]  Por favor, Ingrese el número de WhatsApp.\n${chalk.bold.magentaBright('---> ')}`)))
 phoneNumber = (phoneNumber || '').toString().replace(/\D/g,'')
 if (!phoneNumber.startsWith('+')) {
 phoneNumber = `+${phoneNumber}`
@@ -205,7 +205,7 @@ function resetReconnectBackoff() {
   reconnecting = false
   clearTimeout(reconnectTimer)
 }
-conn.logger.info(`[ ✿ ]  H E C H O\n`)
+conn.logger.info(`[ ✪ ]  H E C H O\n`)
 if (!opts['test']) {
 if (global.db) setInterval(async () => {
 if (global.db.data) await global.db.write()
@@ -225,13 +225,13 @@ scheduleReconnect(`code:${code}`)
 if (global.db.data == null) loadDatabase()
 if (update.qr != 0 && update.qr != undefined || methodCodeQR) {
 if (opcion == '1' || methodCodeQR) {
-console.log(chalk.green.bold(`[ ✿ ]  Escanea este código QR`))}
+console.log(chalk.green.bold(`[ ✪ ]  Escanea este código QR`))}
 }
 if (connection === "open") {
 const userJid = jidNormalizedUser(conn.user.id)
 const userName = conn.user.name || conn.user.verifiedName || "Desconocido"
 await joinChannels(conn)
-console.log(chalk.green.bold(`[ ✿ ]  Conectado a: ${userName}`))
+console.log(chalk.green.bold(`[ ✪ ]  Conectado a: ${userName}`))
 resetReconnectBackoff()
 }
 let reason = new Boom(lastDisconnect?.error)?.output?.statusCode
@@ -290,9 +290,9 @@ global.rutaJadiBot = join(__dirname, `./${jadi}`)
 if (global.yukiJadibts) {
 if (!existsSync(global.rutaJadiBot)) {
 mkdirSync(global.rutaJadiBot, { recursive: true }) 
-console.log(chalk.bold.cyan(`ꕥ La carpeta: ${jadi} se creó correctamente.`))
+console.log(chalk.bold.cyan(`✪ La carpeta: ${jadi} se creó correctamente.`))
 } else {
-console.log(chalk.bold.cyan(`ꕥ La carpeta: ${jadi} ya está creada.`)) 
+console.log(chalk.bold.cyan(`✪ La carpeta: ${jadi} ya está creada.`)) 
 }
 const readRutaJadiBot = readdirSync(rutaJadiBot)
 if (readRutaJadiBot.length > 0) {
@@ -372,12 +372,12 @@ await global.reloadHandler()
 
   const resolveJid = (arg) => {
     if (!arg) return null
-    // Intentar por índice
+
     if (/^\d+$/.test(arg)) {
       const i = parseInt(arg, 10)
       return cliGroups[i] || null
     }
-    // Si parece un JID de grupo válido
+
     if (typeof arg === 'string' && arg.endsWith('@g.us')) return arg
     return null
   }
@@ -440,7 +440,7 @@ await global.reloadHandler()
         console.log('Enviado.')
         return
       }
-      // Si no coincide con comandos, mostrar ayuda
+
       help()
     } catch (e) {
       console.log('Error consola:', e?.message)

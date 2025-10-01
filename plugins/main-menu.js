@@ -13,11 +13,12 @@ let txt = `̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮   ̮  
 > ඩා 𝖲𝗈𝗒 *${botname}*, 𝖺𝗊𝗎𝗂 𝖾𝗌𝗍𝖺𝗇 𝗅𝗈𝗌 𝖼𝗈𝗆𝖺𝗇𝖽𝗈𝗌 𝖽𝖾𝗅 𝖻𝗈𝗍.
 
 ╭┈ࠢ͜┅ࠦ͜͜╾݊͜─ؕ͜─ׄ͜─֬͜─֟͜─֫͜─ׄ͜─ؕ͜─݊͜┈ࠦ͜┅ࠡ͜͜┈࠭͜͜۰۰͜۰
-│ඞ *Tipo* » ${(conn.user.jid == global.conn.user.jid ? 'Principal' : 'Sub-Bot')}
-│❂ *Usuarios* » ${totalreg.toLocaleString()}
-│⚘ *Versión* » ${vs}
-│❖ *Plugins* » ${totalCommands}
-│🜸 *Librería* » ${libreria}
+│ඞ *\`𝙏𝙞𝙥𝙤\`* ᕗ ${(conn.user.jid == global.conn.user.jid ? 'Principal' : 'Sub-Bot')}
+│✪ *\`𝙊𝙬𝙣𝙚𝙧\`* ᕗ ${dev}
+│❂ *\`𝙐𝙨𝙪𝙖𝙧𝙞𝙤𝙨\`* ᕗ ${totalreg.toLocaleString()}
+│⚘ *\`𝙑𝙚𝙧𝙨𝙞𝙤́𝙣\`* ᕗ ${vs}
+│❖ *\`𝙋𝙡𝙪𝙜𝙞𝙣𝙨\`* ᕗ ${totalCommands}
+│🜸 *\`𝙇𝙞𝙗𝙧𝙚𝙧𝙞́𝙖\`* ᕗ ${libreria}
 ╰ׅ┈ࠢ͜─ׄ͜─ׄ֟፝͜─ׄ͜─ׄ͜╴ ⋱࣭ ᩴ  ⋮֔   ᩴ ⋰╶͜─ׄ͜─ׄ֟፝͜─ׄ͜─ׄ͜┈ࠢ͜╯ׅ
 
 ╭┈ࠢ͜─ׄ֟፝͜─ׄ͜─ׄ͜╴𐔌 \`𝐄𝐂𝐎𝐍𝐎𝐌𝐈́𝐀\` 𐦯╶͜─ׄ͜─ׄ֟፝͜─ׄ͜─ׄ͜
