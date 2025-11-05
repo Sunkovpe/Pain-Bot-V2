@@ -13,7 +13,8 @@ if (!result) throw '⚠︎ No se encontraron resultados.'
 const { title, thumbnail, timestamp, views, ago, url, author, seconds } = result
 if (seconds > 1800) throw '⚠ El video supera el límite de duración (10 minutos).'
 const vistas = formatViews(views)
-const info = `❍ Descargando *<${title}>*\n\n> ❑ Canal » *${author.name}*\n> ⁂ Vistas » *${vistas}*\n> ✧︎ Duración » *${timestamp}*\n> ◔ Publicado » *${ago}*\n> ➪ Link » ${url}`
+const info = `❍ Descargando 
+> *<${title}>*\n\n> ❑ Canal » *${author.name}*\n> ⁂ Vistas » *${vistas}*\n> ✧︎ Duración » *${timestamp}*\n> ◔ Publicado » *${ago}*\n> ➪ Link » ${url}`
 const thumb = (await conn.getFile(thumbnail)).data
 await conn.sendMessage(m.chat, { image: thumb, caption: info }, { quoted: m })
 if (['play', 'yta', 'ytmp3', 'playaudio'].includes(command)) {
@@ -40,16 +41,13 @@ export default handler
 
 async function getAud(url) {
 const apis = [
-//{ api: 'ZenzzXD', endpoint: `${global.APIs.zenzxz.url}/downloader/ytmp3?url=${encodeURIComponent(url)}`, extractor: res => res.download_url },
-{ api: 'ZenzzXD v2', endpoint: `${global.APIs.zenzxz.url}/downloader/ytmp3v2?url=${encodeURIComponent(url)}`, extractor: res => res.download_url }, 
-{ api: 'Vreden', endpoint: `${global.APIs.vreden.url}/api/ytmp3?url=${encodeURIComponent(url)}`, extractor: res => res.result?.download?.url },
-{ api: 'Delirius', endpoint: `${global.APIs.delirius.url}/download/ymp3?url=${encodeURIComponent(url)}`, extractor: res => res.data?.download?.url }
+{ api: 'ZenzzXD Search', endpoint: `https://api.zenzxz.my.id/api/search/play?query=${encodeURIComponent(url)}`, extractor: res => res.data?.dl_mp3 }
 ]
 return await fetchFromApis(apis)
 }
 async function getVid(url) {
 const apis = [
-//{ api: 'ZenzzXD', endpoint: `${global.APIs.zenzxz.url}/downloader/ytmp4?url=${encodeURIComponent(url)}`, extractor: res => res.download_url },
+{ api: 'ZenzzXD Search', endpoint: `https://api.zenzxz.my.id/api/search/play?query=${encodeURIComponent(url)}`, extractor: res => res.data?.dl_mp4 },
 { api: 'ZenzzXD v2', endpoint: `${global.APIs.zenzxz.url}/downloader/ytmp4v2?url=${encodeURIComponent(url)}`, extractor: res => res.download_url },
 { api: 'Vreden', endpoint: `${global.APIs.vreden.url}/api/ytmp4?url=${encodeURIComponent(url)}`, extractor: res => res.result?.download?.url },
 { api: 'Delirius', endpoint: `${global.APIs.delirius.url}/download/ytmp4?url=${encodeURIComponent(url)}`, extractor: res => res.data?.download?.url }
