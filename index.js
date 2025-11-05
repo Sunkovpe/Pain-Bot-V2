@@ -186,9 +186,9 @@ let reconnectTimer = null
 function scheduleReconnect(label = 'close') {
   if (reconnecting) return
   reconnecting = true
-  const delay = 1500 
+  const delay = 6000 
   retryCount = Math.min(retryCount + 1, 3)
-  console.log(chalk.yellow(`→ Reconectando (${label}) en ${Math.round(delay / 1000)}s...`))
+  console.log(chalk.yellow(`→ Reconectando (${label}) en ${Math.round(delay / 6000)}s...`))
   clearTimeout(reconnectTimer)
   reconnectTimer = setTimeout(async () => {
     try {
